@@ -10,7 +10,7 @@ data class WeatherDescription (
     @SerializedName("main")
     @Expose
     var main: String,
-    @SerializedName("description")
+    @SerializedName("description_location")
     @Expose
     var description: String,
     @SerializedName("icon")

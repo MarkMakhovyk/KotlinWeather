@@ -27,7 +27,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/recycler_view_weather_hourly">
+                app:layout_constraintBottom_toTopOf="@+id/hourlyRecyclerView">
 
             <LinearLayout
                     android:id="@+id/linearLayout3"
@@ -149,7 +149,7 @@
             </LinearLayout>
 
             <TextView
-                    android:id="@+id/city"
+                    android:id="@+id/cityNameTextView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -157,14 +157,14 @@
                     android:layout_marginEnd="8dp"
                     android:gravity="left"
                     android:textSize="32sp"
-                    app:layout_constraintEnd_toStartOf="@+id/city_list"
+                    app:layout_constraintEnd_toStartOf="@+id/cityUserList"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Slavytich"/>
 
 
             <TextView
-                    android:id="@+id/temp_now"
+                    android:id="@+id/tempNow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -173,7 +173,7 @@
                     android:textSize="80sp"
                     app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/city_list"
+                    app:layout_constraintTop_toBottomOf="@+id/cityUserList"
                     tools:text="8 \u00B0"/>
 
             <TextView
@@ -183,49 +183,49 @@
                     android:layout_marginStart="8dp"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/city"
+                    app:layout_constraintTop_toBottomOf="@+id/cityName"
                     tools:text="rain"/>
 
 
             <ImageView
-                    android:id="@+id/icon_weather_today"
+                    android:id="@+id/iconWeatherNow"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
                     android:tint="@color/colorWrite"
                     app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/description"/>
 
             <ImageButton
-                    android:id="@+id/city_list"
+                    android:id="@+id/cityUserList"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
                     android:background="@drawable/settings"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginRight="16dp"/>
 
         </android.support.constraint.ConstraintLayout>
 
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view_weather_hourly"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:scrollbars="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/recycler_view_weather_daily"></android.support.v7.widget.RecyclerView>
+                android:id="@+id/hourlyRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:scrollbars="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/dailyRecyclerView"></android.support.v7.widget.RecyclerView>
 
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view_weather_daily"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:background="@color/colorLightWrite"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></android.support.v7.widget.RecyclerView>
+                android:id="@+id/dailyRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:background="@color/colorLightWrite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"></android.support.v7.widget.RecyclerView>
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.SwipeRefreshLayout>

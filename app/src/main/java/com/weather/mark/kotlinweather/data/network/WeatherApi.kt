@@ -12,7 +12,15 @@ interface WeatherApi  {
     }
 
     @GET("forecast")
-    fun getData(@Query("q") query: String, @Query("lang") land: String, @Query("appid") APIKey: String)
+    fun getForecastByCity(@Query("q") query: String, @Query("lang") land: String, @Query("appid") APIKey: String)
+            : Call<Forecast>
+
+    @GET("forecast")
+    fun getForecastByLocation(
+        @Query("lat") lat: String, @Query("lon") lon: String, @Query("lang") land: String, @Query(
+            "appid"
+        ) APIKey: String
+    )
             : Call<Forecast>
 }
 
